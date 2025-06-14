@@ -1,10 +1,9 @@
 import streamlit as st
-import time
 
-# Set up page
+# Page setup
 st.set_page_config(page_title="NPEA | Home", layout="centered")
 
-# Display logo
+# Logo at top
 st.image("assets/logo.png", width=160)
 
 # Government-style header
@@ -19,16 +18,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Animated "tech" intro
-with st.container():
-    st.markdown("### Initializing Secure Portal…")
-    with st.spinner("Verifying snack inventory..."):
-        time.sleep(1.5)
-    st.success("Snack inventory confirmed.")
-    time.sleep(0.5)
-    st.markdown("#### Access granted: Level 7 Prank Response Unit")
-
-# Welcome message
+# Welcome text
 st.markdown(
     """
     <div style="margin-top:30px;">
