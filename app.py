@@ -33,7 +33,7 @@ if not st.session_state.logged_in:
 # --- SIDEBAR NAVIGATION ---
 with st.sidebar:
     st.header("📁 NPEA Menu")
-    st.session_state.page = st.radio("Navigate to", ["Home", "About"])
+    st.session_state.page = st.radio("Navigate to", ["Home", "Cases", "About"])
 
 # --- PAGE CONTENT ---
 if st.session_state.page == "Home":
