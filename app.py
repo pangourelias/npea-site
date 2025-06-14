@@ -2,10 +2,11 @@ import streamlit as st
 
 st.set_page_config(page_title="NPEA | About", layout="centered")
 
+st.image("assets/logo.png", width=120)
+
 st.markdown(
     """
     <div style="text-align:center;">
-        <img src="assets/logo.png" width="120">
         <h1 style="margin-top:10px;">Neighborhood Prank Enforcement Authority</h1>
         <h3 style="color:gray;">Division of Snack Security & Lawn Order</h3>
         <hr style="margin-top:30px;">
