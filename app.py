@@ -1,15 +1,20 @@
 import streamlit as st
+import os
 
-# Set page config
-st.set_page_config(page_title="NPEA | Login", layout="centered")
+# Page setup
+st.set_page_config(page_title="NPEA | Secure Portal", layout="centered")
 
-# Initialize session state
+# Init session state
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
+if "page" not in st.session_state:
+    st.session_state.page = "Home"
 
-# Login check
+# Logo
+st.image("assets/logo.png", width=160)
+
+# --- LOGIN ---
 if not st.session_state.logged_in:
-    st.image("assets/logo.png", width=160)
     st.title("Neighborhood Prank Enforcement Authority")
     st.subheader("🔐 Secure Access Portal")
 
@@ -20,12 +25,18 @@ if not st.session_state.logged_in:
         if username == "winnie" and password == "ironman":
             st.session_state.logged_in = True
             st.success("Access granted.")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Invalid credentials.")
-else:
-    # Logged in - show landing content
-    st.image("assets/logo.png", width=160)
+    st.stop()
+
+# --- SIDEBAR NAVIGATION ---
+with st.sidebar:
+    st.header("📁 NPEA Menu")
+    st.session_state.page = st.radio("Navigate to", ["Home", "About"])
+
+# --- PAGE CONTENT ---
+if st.session_state.page == "Home":
     st.markdown(
         """
         <div style='text-align:center;'>
@@ -36,6 +47,7 @@ else:
         """,
         unsafe_allow_html=True
     )
+
     st.markdown(
         """
         <div style="margin-top:30px;">
@@ -49,6 +61,24 @@ else:
         """,
         unsafe_allow_html=True
     )
-
     st.markdown("---")
     st.caption("This portal is monitored by the Department of Neighborhood Nonsense. Proceed with snacks.")
+
+elif st.session_state.page == "About":
+    st.subheader("📄 About NPEA")
+    st.markdown(
+        """
+        The **Neighborhood Prank Enforcement Authority (NPEA)** is a semi-legitimate organization dedicated to the investigation, documentation, and prevention of suspicious prank activity in residential zones.
+
+        **Our jurisdiction includes:**
+        - Toilet-papered trees  
+        - Ding-dong-ditch incidents  
+        - Snack theft  
+        - Suspicious garden gnome relocation  
+
+        We operate with unverified authority but unwavering commitment to comedic justice.
+
+        ### 🕵️ Mission Statement
+        To document, discourage, and sometimes participate in neighborhood pranks — all in the name of fun and mild chaos.
+        """
+    )
