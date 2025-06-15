@@ -12,7 +12,7 @@ def case_card(case_id, title, description, thumbnail_path, is_openable=False):
     with st.container():
         cols = st.columns([1, 3])
         with cols[0]:
-            st.image(thumbnail_path, use_column_width=True)
+            st.image(thumbnail_path, use_container_width=True)
         with cols[1]:
             st.markdown(f"### {title}")
             st.markdown(description)
@@ -20,7 +20,7 @@ def case_card(case_id, title, description, thumbnail_path, is_openable=False):
                 if is_openable:
                     st.success(f"Access granted to case {case_id}.")
                     st.markdown("🔍 Officer report: Missing snack tray. Suspect fled on foot. Surveillance shows cookie crumbs at the scene.")
-                    st.image("assets/brb404snax_evidence.png", caption="Fig. A — Last known cookie tray visual", use_column_width=True)
+                    st.image("assets/brb404snax_evidence.png", caption="Fig. A — Last known cookie tray visual", use_container_width=True)
                 else:
                     st.error("❌ Invalid credentials for this case.")
         st.markdown("---")
