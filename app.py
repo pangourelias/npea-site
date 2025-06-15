@@ -1,9 +1,32 @@
 import streamlit as st
 
-st.set_page_config(page_title="NPEA | Home", layout="centered")
+st.set_page_config(page_title="NPEA | Login", layout="centered")
 
+# Set session defaults
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+# Logo
 st.image("assets/logo.png", width=160)
 
+# If not logged in, show login form
+if not st.session_state.logged_in:
+    st.title("Neighborhood Prank Enforcement Authority")
+    st.subheader("🔐 Secure Access Portal")
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username == "winnie" and password == "ironman":
+            st.session_state.logged_in = True
+            st.success("Access granted.")
+            st.rerun()
+        else:
+            st.error("Invalid credentials.")
+    st.stop()
+
+# If logged in, show landing
 st.markdown(
     """
     <div style='text-align:center;'>
