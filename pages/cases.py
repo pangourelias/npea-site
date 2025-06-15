@@ -25,12 +25,12 @@ def case_card(case_id, title, description, thumbnail_path, is_openable=False):
 
                     st.markdown("### 🔍 Officer Report #1")
                     st.markdown("NPEA issues video warning. Suspect urged to deliver snacks to victims to avoid further enforcement.")
-                    st.video("https://youtube.com/shorts/PCLYTv4beTY")
+                    st.video("https://youtube.com/embed/PCLYTv4beTY")
 
                     st.markdown("---")
                     st.markdown("### 🔍 Officer Report #2")
                     st.markdown("Suspect ignored warning. NPEA responds by toilet-papering suspect’s tree. Further pranks promised if snacks not delivered.")
-                    st.video("https://www.youtube.com/shorts/NUJPnPf0zTA")
+                    st.video("https://www.youtube.com/embed/NUJPnPf0zTA")
                 else:
                     st.error("❌ Invalid credentials for this case.")
 
