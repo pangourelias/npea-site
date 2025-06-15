@@ -17,10 +17,18 @@ def case_card(case_id, title, description, thumbnail_path, is_openable=False):
             st.markdown(f"### {title}")
             st.markdown(description)
             if st.button(f"Open Case {case_id}", key=case_id):
-                if is_openable:
-                    st.success(f"Access granted to case {case_id}.")
-                    st.markdown("🔍 Officer report: Missing snack tray. Suspect fled on foot. Surveillance shows cookie crumbs at the scene.")
-                    st.image("assets/brb404snax_evidence.png", caption="Fig. A — Last known cookie tray visual", use_container_width=True)
+if is_openable:
+    st.success(f"Access granted to case {case_id}.")
+
+    st.markdown("### 🔍 Officer Report #1")
+    st.markdown("Missing snack tray. Suspect fled on foot. Surveillance shows cookie crumbs at the scene.")
+    st.video("https://www.youtube.com/shorts/NUJPnPf0zTA")
+
+    st.markdown("---")
+    st.markdown("### 🔍 Officer Report #2")
+    st.markdown("Witnesses report suspicious crunching noises. Possible snack stash behind the garage.")
+    st.video("https://www.youtube.com/shorts/NUJPnPf0zTA")
+
                 else:
                     st.error("❌ Invalid credentials for this case.")
         st.markdown("---")
