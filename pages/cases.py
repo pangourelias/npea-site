@@ -21,12 +21,12 @@ if is_openable:
     st.success(f"Access granted to case {case_id}.")
 
     st.markdown("### 🔍 Officer Report #1")
-    st.markdown("Missing snack tray. Suspect fled on foot. Surveillance shows cookie crumbs at the scene.")
-    st.video("https://www.youtube.com/shorts/NUJPnPf0zTA")
+    st.markdown("NPEA issues video warning. Suspect urged to deliver snacks to victims to avoid further enforcement.")
+    st.video("https://youtube.com/shorts/PCLYTv4beTY")
 
     st.markdown("---")
     st.markdown("### 🔍 Officer Report #2")
-    st.markdown("Witnesses report suspicious crunching noises. Possible snack stash behind the garage.")
+    st.markdown("Suspect ignored warning. NPEA responds by toilet-papering suspect’s tree. Further pranks promised if snacks not delivered.")
     st.video("https://www.youtube.com/shorts/NUJPnPf0zTA")
 
                 else:
@@ -37,9 +37,9 @@ if is_openable:
 # --- Cases List ---
 case_card(
     "BRB404SNAX",
-    "🚨 Snack Violation + Officer Down",
-    "Unauthorized consumption of treats followed by a driveway incident. Suspect escaped. Robot officer sustained minor leg damage.",
-    "assets/snack_violation_thumb.png",
+    "🚨 Ding Dong Ditch",
+    "A wild boy is making the rounds — ringing doorbells and vanishing into the night like a snack-fueled ninja. Neighbors report rising blood pressure and phantom chimes. Suspect has been seen laughing maniacally while sprinting barefoot across lawns.",
+    "assets/Dingdongditch_thumb.png",
     is_openable=True
 )
 
